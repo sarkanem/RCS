@@ -10,13 +10,13 @@ namespace D6
     {
         static void Main(string[] args)
         {
-            /*
+            
             Piemers();
             Uzdevums25();            
             Uzdevums26();            
             pretejiSaraksts();
             Uzdevums27();
-            */
+            
             Uzdevums28();
             Console.ReadLine();
         }
