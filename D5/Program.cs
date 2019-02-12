@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,9 +16,12 @@ namespace D5
             Uzdevums3();
             Uzdevums4();
             Uzdevums5();
-            Uzdevums6();            
+            Uzdevums6();   
+            
+            burtuIndeksi();
            */
-            Uzdevums7(); 
+            Uzdevums7();
+
             Console.ReadLine();
         }
 
@@ -179,43 +182,70 @@ namespace D5
         {
             string vards = "BASEINS";
             string zv = "*******";
-            int cikjamin = vards.Length; // cik burtu vārdā
-           
-            Console.WriteLine(zv);
-            Console.WriteLine("Mini burtu!");                      
-            
-            string burts = Console.ReadLine().ToUpper();
-            bool minejums = vards.Contains(burts); // true or false 
-            
-            // kamer nav zvaigznu atkārto
 
+            Console.WriteLine("Spēlējam karātāvas! Tev jāuzmin:\n");
+            Console.WriteLine(zv);                               
+            
             while (zv.Contains("*"))
-            { 
+            {
+                Console.WriteLine("\nMini burtu!");
+                string burts = Console.ReadLine().ToUpper();
+                bool minejums = vards.Contains(burts); // true or false 
+
                 if (minejums == false)
-                { Console.WriteLine("Burts {0} nav šajā vārdā", burts);
-                  break;
-                }               
+                {
+                    Console.WriteLine("Burts {0} nav šajā vārdā", burts);                  
+                }
+
+                else if (String.IsNullOrEmpty(burts))
+                {
+                    continue;
+                }
 
                 else if (minejums == true)
                 {
-                    zv = zv.Remove(vards.IndexOf(burts), 1); // izņemt indeksēto 
+                    int burtsIndex = vards.IndexOf(burts);
+                    zv = zv.Remove(vards.IndexOf(burts), 1);                    
                     zv = zv.Insert(vards.IndexOf(burts), burts); // ielikt minēto burtu
-                    cikjamin = cikjamin-1;
 
-                    Console.WriteLine(zv);
-                    Console.WriteLine("Tev vēl jāuzmin {0} pozīcijas", cikjamin);
-                    break;
+                         if (burtsIndex == 2 )
+                         {
+                              zv = zv.Remove(6, 1);
+                              zv = zv.Insert(6, "S");
+                         }
+                    Console.WriteLine(zv);                                           
+                }                             
+
+                if (zv.Contains("BASEINS"))
+                {
+                    Console.WriteLine("\nApsveicu! Tu uzminēji vārdu {0}!", vards);
                 }
                 
             }
-
-
-            // Console.WriteLine(cikjamin + " burti"); 
-
+            // AKA BASEINS
             // int pozA = vards.IndexOf("A"); 0
             // pozA =  vards.IndexOf("A", 0+1); 2
             // pozA = vards.IndexOf("A", 2+1); -1
 
+            // int cikjamin = vards.Length; // cik burtu vārdā    
+        }
+
+        static void burtuIndeksi() // meklēju veidus
+        {
+            string vards = "BASEINS";
+            string zv = "*******";
+            string burts = Console.ReadLine().ToUpper();
+
+            int i = 0;
+            while ((i = vards.IndexOf(burts, i)) != -1)
+            {
+                zv = zv.Remove(vards.IndexOf(burts), 1);
+                zv = zv.Insert(i, burts);
+            
+                i++;
+
+                Console.WriteLine(zv);
+            }      
         }
     }
 }

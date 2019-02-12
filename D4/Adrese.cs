@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace D4
 {
     class Adrese
-    {
-        
+    {        
         public string Valsts;
        
         public string Pilseta;

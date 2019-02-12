@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace D7
+namespace Kalkulators
 {
     static class Program
     {

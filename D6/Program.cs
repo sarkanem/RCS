@@ -33,7 +33,7 @@ namespace D6
 
             int skaitlis = skaitli[3]; // 4
 
-            for(int i = 0; i < 5; i++) // vi i < 5 va likt skaitli.Length
+            for(int i = 0; i < 5; i++) // vai i < 5 va likt skaitli.Length
             {
                 int vertibas = skaitli[i];
                 Console.WriteLine(vertibas);
@@ -192,6 +192,28 @@ namespace D6
 
             int max = saraksts.Max();
             int min = saraksts.Min();
+
+            /* šeit tiks izmantots tikai viens cikls nevis divi kā augšā, attiecīgi būs ātrāka apstrāde
+            
+            int max = saraksts.First(); // vai saraksts[0];
+            int min = saraksts.First();
+
+            foreach (int sk in saraksts)
+            
+            {
+              if (sk < min)
+              {
+                min = sk;
+              }
+
+              if (sk > max)
+              {
+                max = sk;
+              }
+               Console.WriteLine("Min = {0}, max = {1}", min, max);
+            }           
+            
+             */
 
             Console.WriteLine("Lielākais skaitlis ir {0}", max);
             Console.WriteLine("Māzākais skaitlis ir {0}", min);

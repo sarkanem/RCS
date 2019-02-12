@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4484E481-88BB-4BC3-8903-C196BF594DDA}</ProjectGuid>
+    <ProjectGuid>{F8655AC7-695E-474D-B172-C7EA3C1F57E1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>D4</RootNamespace>
-    <AssemblyName>D4</AssemblyName>
+    <RootNamespace>D9</RootNamespace>
+    <AssemblyName>D9</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,17 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aplis.cs" />
-    <Compile Include="Adrese.cs" />
-    <Compile Include="Darbinieks.cs" />
-    <Compile Include="Klase.cs" />
+    <Compile Include="IGeometriskaFigura.cs" />
     <Compile Include="Kvadrats.cs" />
-    <Compile Include="Prieksmets.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Skolens.cs" />
-    <Compile Include="Skolotajs.cs" />
-    <Compile Include="Telpa.cs" />
-    <Compile Include="Vertejums.cs" />
+    <Compile Include="Taisnsturis.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

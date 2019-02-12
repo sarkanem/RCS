@@ -10,8 +10,8 @@ namespace D4
     {
         static void Main(string[] args)
         {
-
-            Uzdevums("1. uzdevums \n");
+            /*
+            Uzdevums("1. uzdevums");
             Uzdevums21();
             Console.WriteLine();
 
@@ -22,6 +22,12 @@ namespace D4
             Uzdevums("Darbinieks");
             Darbinieks();
             Console.WriteLine();
+            */
+
+            Uzdevums("E-Klase");
+            EKLASE();
+            Console.WriteLine();
+
 
             Console.ReadLine();
         }
@@ -55,12 +61,12 @@ namespace D4
             {
                 malasGarums = 5,
 
-            // ...un pārējās īpašības
+                // ...un pārējās īpašības
 
 
-            // tas pats kas
-            // Kvadrats kv3 = new Kvadrats ();
-            // kv3.malasGarums = 5;             
+                // tas pats kas
+                // Kvadrats kv3 = new Kvadrats ();
+                // kv3.malasGarums = 5;             
             };
 
             Kvadrats.FigurasNosaukums();
@@ -79,19 +85,18 @@ namespace D4
 
             double laukums = ap1.Laukums();
             double perimetrs = ap1.Perimetrs();
-          
+
             Console.WriteLine("Laukums ir {0}", laukums);
             Console.WriteLine("Perimetrs ir {0}", perimetrs);
             ap1.KrasasIzvade();
 
             Aplis ap2 = new Aplis(10, "zils");
             ap2.KonsolesIzvade();
-          
+
         }
 
         static void Darbinieks()
         {
-
             Darbinieks darb = new Darbinieks();
 
             darb.Vards = "Aigars";
@@ -114,5 +119,61 @@ namespace D4
             Console.WriteLine("Darbinieka darbavieta: {0}", darb.Darbavieta.PilnaAdrese());
         }
 
+        static void EKLASE()
+        {
+            Vertejums jauns = new Vertejums();
+           
+            jauns.Atzime = 8;
+            jauns.MacibuPrieksmets = new Prieksmets
+            {
+                Nosaukums = "Algebra",
+            };
+
+            jauns.MacibuPrieksmets.PrieksmetaTelpa = new Telpa
+            {
+                Numurs = 201,
+                Stāvs = 2
+            };
+
+            jauns.MacibuPrieksmets.PrieksmetaSkolotajs = new Skolotajs
+            {
+                Vards = "Jana",
+                Uzvards = "Zaķe",
+                Epasts = "zakis@skola.lv",
+            };
+
+            jauns.SkolenaProfils = new Skolens
+            {
+                Vards = "Jānis",
+                Uzvards = "Lūsis",
+                Epasts = "lusis@skola.lv",
+                DzimsanasGads = 2001
+            };
+
+            jauns.SkolenaProfils.SkolenaKlase = new Klase
+            {
+                Nosaukums = "11B",
+                SkolēnuSkaits = 28
+            };
+
+            jauns.SkolenaProfils.SkolenaKlase.KlasesTelpa = new Telpa
+            {
+                Numurs = 401,
+                Stāvs = 4
+            };
+
+            // Skolens sk = new Skolens();
+            // sk.Klase = new Klase();
+            // sk.Klase.Telpa = new Telpa();
+            // Skolens.Klase.Telpa.Numurs = 5;
+
+            jauns.VertejumaProfils();
+            Console.WriteLine(jauns.MacibuPrieksmets.PrieksmetaProfils());
+            Console.WriteLine(jauns.MacibuPrieksmets.PrieksmetaTelpa.TelpasProfils());
+            Console.WriteLine(jauns.MacibuPrieksmets.PrieksmetaSkolotajs.SkolotajaProfils());
+            Console.WriteLine(jauns.SkolenaProfils.SkolenaProfils());
+            Console.WriteLine(jauns.SkolenaProfils.SkolenaKlase.KlasesProfils());
+            Console.WriteLine(jauns.SkolenaProfils.SkolenaKlase.KlasesTelpa.TelpasProfils());
+        }
     }
 }
